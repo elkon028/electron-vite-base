@@ -15,7 +15,7 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: ${productName}
+  executableName: draw-ts
   target:
     - target: nsis
 nsis:
