@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-// import Versions from '@/components/Versions.vue'
+// import ElectronVersions from '@/components/ElectronVersions.vue'
 </script>
 
 <template>
-  <Versions />
+  <ElectronVersions />
   <el-link icon="i-carbon-home" />
 </template>

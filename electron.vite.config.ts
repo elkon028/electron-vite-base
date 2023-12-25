@@ -66,7 +66,10 @@ export default defineConfig({
       }),
       Components({
         dts: true,
-        dirs: ['src/renderer/components'],
+        // https://cn.electron-vite.org/guide/dev
+        // 默认情况下，渲染器的工作目录位于 src/renderer
+        // 所以此处应设为 './components'
+        dirs: ['./components'],
         // allow auto load markdown components under `./src/components/`
         extensions: ['vue', 'md'],
         // allow auto import and register components used in markdown
