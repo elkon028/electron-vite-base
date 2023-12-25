@@ -16,7 +16,7 @@ asarUnpack:
   - resources/**
 win:
   executableName: draw-ts
-  requestedExecutionLevel: requireAdministrator
+  # requestedExecutionLevel: requireAdministrator
   target:
     - target: nsis
 nsis:
