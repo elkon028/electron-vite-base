@@ -5,7 +5,7 @@ import { BrowserWindow, Tray, app, nativeImage, shell } from 'electron'
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 
 import linuxIcon from '../../build/icon.png?asset'
-import appIcon from '../../build/icon.ico?asset'
+import appIcon from '../../resources/icon.ico?asset'
 
 let mainWindow: BrowserWindow
 let appTray: Tray
