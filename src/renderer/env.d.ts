@@ -7,6 +7,7 @@ declare module '*.vue' {
   export default component
 }
 
+// 环境变量设置
 // see: https://cn.electron-vite.org/guide/env-and-mode
 interface ImportMetaEnv {
   readonly MAIN_VITE_SOME_KEY: string

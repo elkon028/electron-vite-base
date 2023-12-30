@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElectronVersions: typeof import('./components/ElectronVersions.vue')['default']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElLink: typeof import('element-plus/es')['ElLink']
     ICarbonHome: typeof import('~icons/carbon/home')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
