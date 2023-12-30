@@ -18,6 +18,7 @@
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
+    "outDir": "./out",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -28,5 +29,5 @@
     "src/renderer/*.d.ts",
     "src/preload/*.d.ts"
   ],
-  "exclude": ["node_modules", "build", "dist", "out", "src/renderer"]
+  "exclude": ["node_modules", "build", "dist", "out"]
 }
