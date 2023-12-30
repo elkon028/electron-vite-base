@@ -15,10 +15,10 @@ const electronVersions = reactive({ ...window.electron.process.versions })
     <li class="p-12px">
       Node v{{ electronVersions.node }}
     </li>
-    <li class="p-12px">
+    <li class="flex-auto p-12px">
       V8 v{{ electronVersions.v8 }}
     </li>
-    <li class="flex-1 p-12px">
+    <li class="p-12px">
       <DarkToggle />
     </li>
   </ul>

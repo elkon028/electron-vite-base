@@ -29,5 +29,5 @@
     "src/renderer/*.d.ts",
     "src/preload/*.d.ts"
   ],
-  "exclude": ["src/**/*.js"]
+  "exclude": ["node_modules", "build", "dist", "out", "src/renderer"]
 }
