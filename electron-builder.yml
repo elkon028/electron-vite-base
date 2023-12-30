@@ -4,7 +4,8 @@ directories:
   buildResources: build
 copyright: Copyright © 2023-present elkon.cn # 版权
 extraResources:
-  - ./conf
+  from: ./resources
+  to: ./
 files:
   - '!**/.vscode/*'
   - '!src/*'
@@ -13,7 +14,6 @@ files:
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
   - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
 asarUnpack:
-  - resources/**
 win:
   executableName: draw-ts
   # requestedExecutionLevel: requireAdministrator

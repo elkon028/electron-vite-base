@@ -1,28 +1,27 @@
 {
-  "target": "ESNext",
-  "jsx": "preserve",
-  "lib": ["DOM", "ESNext"],
-  "baseUrl": ".",
-  "module": "ESNext",
-  "moduleResolution": "node",
-  "resolveJsonModule": true,
-  "allowJs": true,
-  "strict": true,
-  "strictNullChecks": true,
-  "noUnusedLocals": true,
-  "esModuleInterop": true,
-  "forceConsistentCasingInFileNames": true,
-  "isolatedModules": true,
-  "skipLibCheck": true,
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
   "compilerOptions": {
     "composite": true,
+    "target": "ESNext",
+    "jsx": "preserve",
+    "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "paths": {
       "@/*": [
         "src/renderer/*"
       ]
-    }
+    },
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/renderer/**/*",

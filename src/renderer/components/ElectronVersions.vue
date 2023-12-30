@@ -20,3 +20,28 @@ const electronVersions = reactive({ ...window.electron.process.versions })
     </li>
   </ul>
 </template>
+
+<style lang="scss" scoped>
+.versions {
+  margin: 0 auto;
+  float: none;
+  clear: both;
+  overflow: hidden;
+  color: #c2f5ff;
+  line-height: 1;
+  transition: all 0.3s;
+
+  li {
+    display: block;
+    float: left;
+    border-right: 1px solid rgba(194, 245, 255, 0.4);
+    padding: 0 20px;
+    font-size: 13px;
+    opacity: 0.8;
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
+</style>

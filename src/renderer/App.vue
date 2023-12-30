@@ -1,12 +1,24 @@
+<script>
+import { defineComponent } from 'vue'
+import { ElConfigProvider } from 'element-plus'
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+
+export default defineComponent({
+  components: {
+    ElConfigProvider,
+  },
+  setup() {
+    return {
+      zIndex: 3000,
+      size: 'default',
+      locale: zhCn,
+    }
+  },
+})
+</script>
+
 <template>
-  <ElectronVersions />
-  <div class="flex-row">
-    <el-link type="primary" icon="i-carbon-home">
-      prop icon
-    </el-link>
-    <span>
-      tag icon <i-carbon-home />
-    </span>
-    <a class="i-carbon-home">class icon</a>
-  </div>
+  <ElConfigProvider :size="size" :z-index="zIndex" :locale="locale">
+    <router-view />
+  </ElConfigProvider>
 </template>

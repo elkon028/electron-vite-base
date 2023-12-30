@@ -10,6 +10,8 @@ declare module '*.vue' {
 // see: https://cn.electron-vite.org/guide/env-and-mode
 interface ImportMetaEnv {
   readonly MAIN_VITE_SOME_KEY: string
+  readonly PRELOAD_VITE_SOME_KEY: string
+  readonly RENDERER_VITE_SOME_KEY: string
   // more env variables...
 }
 

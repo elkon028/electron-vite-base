@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElectronVersions: typeof import('./components/ElectronVersions.vue')['default']
     ElLink: typeof import('element-plus/es')['ElLink']
     ICarbonHome: typeof import('~icons/carbon/home')['default']
