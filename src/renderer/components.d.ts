@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    DarkToggle: typeof import('./components/DarkToggle.vue')['default']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElectronVersions: typeof import('./components/ElectronVersions.vue')['default']
     ElIcon: typeof import('element-plus/es')['ElIcon']

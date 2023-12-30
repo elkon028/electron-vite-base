@@ -37,6 +37,7 @@
     "@antfu/eslint-config": "^2.4.6",
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@iconify-json/carbon": "^1.1.27",
+    "@iconify/tools": "^4.0.0",
     "@rushstack/eslint-patch": "^1.6.1",
     "@types/node": "^18.17.5",
     "@unocss/eslint-config": "^0.58.0",

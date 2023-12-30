@@ -17,18 +17,29 @@ const { MAIN_VITE_SOME_KEY, PRELOAD_VITE_SOME_KEY, RENDERER_VITE_SOME_KEY } = im
     <div class="my-24px">
       图标使用
     </div>
-    <div class="flex gap-4 p-12px text-xs">
+    <div class="p-12px text-xs">
       <div class="flex">
-        组件方式：<i-carbon-home />
+        组件方式：<i-carbon-home />{{ '<i-carbon-home />' }}
       </div>
       <div>
-        <i class="i-carbon-home">
-          {{ '<a class="i-carbon-home"></a>' }}
-        </i>
+        class方式：
+        <a>
+          <i class="i-carbon-home text-sm color-red" />
+          {{ '<a><i class="i-carbon-home text-sm color-red" /> ...</a>' }}
+        </a>
       </div>
       <div>
+        props方式：
         <el-link type="success" icon="i-carbon-home">
-          {{ `<el-link icon="i-carbon-home"></el-link>` }}
+          {{ `<el-link icon="i-carbon-home">...</el-link>` }}
+        </el-link>
+      </div>
+      <div>
+        本地Svg图标：
+        <span class="i-svg-plus" />
+        <i-svg-plus />
+        <el-link type="success" icon="i-svg-plus">
+          {{ `<el-link icon="i-svg-plus">...</el-link>` }}
         </el-link>
       </div>
     </div>

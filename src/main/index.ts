@@ -4,8 +4,10 @@ import process from 'node:process'
 import { BrowserWindow, Tray, app, nativeImage, shell } from 'electron'
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 
+// build/ 引用的图标 会打包到 app.asar 里
 import linuxIcon from '../../build/icon.png?asset'
 import appIcon from '../../build/icon.ico?asset'
+import MainApp from './mainApp'
 
 let mainWindow: BrowserWindow
 let appTray: Tray
@@ -40,6 +42,8 @@ function createWindow(): void {
 
   else
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
+
+  new MainApp(mainWindow).start()
 }
 
 // This method will be called when Electron has finished
