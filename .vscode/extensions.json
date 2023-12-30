@@ -1,3 +1,14 @@
 {
-  "recommendations": ["dbaeumer.vscode-eslint"]
+  "recommendations": [
+    "antfu.iconify",
+    "antfu.unocss",
+    "csstools.postcss",
+    "dbaeumer.vscode-eslint",
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+    "lokalise.i18n-ally",
+    "sibiraj-s.vscode-scss-formatter",
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker"
+  ]
 }
