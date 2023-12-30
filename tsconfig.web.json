@@ -24,7 +24,6 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/renderer/**/*",
     "src/renderer/**/*.vue",
     "src/renderer/*.d.ts",
     "src/preload/*.d.ts"

@@ -6,7 +6,6 @@ export default class MainApp {
   mainWindow: BrowserWindow
   constructor(mainWindow) {
     this.mainWindow = mainWindow
-    return this
   }
 
   start() {

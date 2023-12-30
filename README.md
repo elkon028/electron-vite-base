@@ -37,7 +37,7 @@ $ yarn build:linux
 
 Vue项目核心成员之一 [Anthony Fu](https://antfu.me/)
 
-CSS 元子化 [UnoCSS主页](https://unocss.dev/)、[重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh)、 [实现 UnoCSS 自动补全](https://www.bilibili.com/video/BV1y3411W7YG/?spm_id_from=333.999.0.0&vd_source=8d8b9daa275ea2eb92a1c4b9a802af8c)
+CSS 元子化 [UnoCSS主页](https://unocss.dev/)、[重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh)、 [实现 UnoCSS 自动补全](https://www.bilibili.com/video/BV1y3411W7YG/?spm_id_from=333.999.0.0&vd_source=8d8b9daa275ea2eb92a1c4b9a802af8c)、[interactive docs](https://unocss.dev/interactive/)
 
 开源图标组件 [@iconify/json](<[@iconify/json](https://iconify.design/)>)、 全部图标[icones](https://icones.js.org/)
 
