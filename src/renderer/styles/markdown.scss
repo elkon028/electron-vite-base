@@ -1,0 +1,12 @@
+.prose pre:not(.shiki) {
+  padding: 0;
+}
+
+.prose {
+  img {
+    width: 100%;
+  }
+  .shiki {
+    font-family: "DM Mono", monospace;
+  }
+}

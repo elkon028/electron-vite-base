@@ -6,9 +6,10 @@ import App from './App.vue'
 import router from '@/router'
 import { ipc } from '@/api'
 
-import '@unocss/reset/tailwind.css'
+// 会影响 Markdown 样式
+// import '@unocss/reset/tailwind.css'
+import '@/styles/index.scss'
 import 'virtual:uno.css'
-import './styles/index.scss'
 
 const app = createApp(App)
 

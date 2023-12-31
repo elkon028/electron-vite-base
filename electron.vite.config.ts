@@ -1,6 +1,6 @@
 import { resolve } from 'node:path'
 import { bytecodePlugin, defineConfig, externalizeDepsPlugin } from 'electron-vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
 
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -10,6 +10,10 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 
 import Unocss from 'unocss/vite'
+
+import Markdown from 'unplugin-vue-markdown/vite'
+import LinkAttributes from 'markdown-it-link-attributes'
+import Shiki from 'markdown-it-shikiji'
 
 export default defineConfig({
   main: {
@@ -47,7 +51,9 @@ export default defineConfig({
       },
     },
     plugins: [
-      vue(),
+      Vue({
+        include: [/\.vue$/, /\.md$/],
+      }),
       AutoImport({
         dts: true,
         vueTemplate: true,
@@ -90,6 +96,26 @@ export default defineConfig({
       Unocss(),
       Icons({
         autoInstall: true,
+      }),
+      Markdown({
+        wrapperClasses: 'prose prose-sm m-auto text-left',
+        headEnabled: false,
+        async markdownItSetup(md) {
+          md.use(LinkAttributes, {
+            matcher: (link: string) => /^https?:\/\//.test(link),
+            attrs: {
+              target: '_blank',
+              rel: 'noopener',
+            },
+          })
+          md.use(await Shiki({
+            defaultColor: false,
+            themes: {
+              light: 'vitesse-light',
+              dark: 'vitesse-dark',
+            },
+          }))
+        },
       }),
     ],
   },

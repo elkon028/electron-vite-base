@@ -62,10 +62,12 @@ html.dark {
 html.dark .shiki,
 html.dark .shiki span {
   color: var(--shiki-dark);
+  background: var(--shiki-dark-bg);
 }
 html:not(.dark) .shiki,
 html:not(.dark) .shiki span {
   color: var(--shiki-light);
+  background: var(--shiki-light-bg);
 }
 html.dark ::-moz-selection {
   background: #444;

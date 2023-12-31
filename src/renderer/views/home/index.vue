@@ -1,4 +1,6 @@
 <script setup>
+import MarkdownDemo from './MarkdownDemo.md'
+
 // 环境变量
 const { MAIN_VITE_SOME_KEY, PRELOAD_VITE_SOME_KEY, RENDERER_VITE_SOME_KEY } = import.meta.env
 </script>
@@ -6,7 +8,7 @@ const { MAIN_VITE_SOME_KEY, PRELOAD_VITE_SOME_KEY, RENDERER_VITE_SOME_KEY } = im
 <template>
   <ElectronVersions />
   <div class="p-12px">
-    <div class="my-24px">
+    <div class="my-10px">
       .env.* 环境变量配置信息读取
     </div>
     <div class="p-12px text-xs">
@@ -14,7 +16,7 @@ const { MAIN_VITE_SOME_KEY, PRELOAD_VITE_SOME_KEY, RENDERER_VITE_SOME_KEY } = im
       <div>PRELOAD_VITE_SOME_KEY：{{ PRELOAD_VITE_SOME_KEY }} # 渲染进程不可用</div>
       <div>RENDERER_VITE_SOME_KEY：{{ RENDERER_VITE_SOME_KEY }} # 渲染进程可用</div>
     </div>
-    <div class="my-24px">
+    <div class="my-10px">
       图标使用
     </div>
     <div class="p-12px text-xs">
@@ -43,5 +45,9 @@ const { MAIN_VITE_SOME_KEY, PRELOAD_VITE_SOME_KEY, RENDERER_VITE_SOME_KEY } = im
         </el-link>
       </div>
     </div>
+    <div class="my-10px">
+      Markdown 演示
+    </div>
+    <MarkdownDemo />
   </div>
 </template>

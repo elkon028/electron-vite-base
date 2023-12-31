@@ -26,6 +26,8 @@
   },
   "include": [
     "src/renderer/**/*.vue",
+    "src/renderer/**/*.ts",
+    "src/renderer/**/*.js",
     "src/renderer/*.d.ts",
     "src/preload/*.d.ts"
   ],

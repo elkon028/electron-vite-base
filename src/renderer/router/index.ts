@@ -20,7 +20,7 @@ export const constantRoutes = [
         component: () => import('@/views/home/index.vue'),
         name: 'home',
         meta: {
-          title: '抽签',
+          title: '首页',
         },
       },
     ],
