@@ -17,5 +17,24 @@ body {
 #app {
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-header {
+    padding: 0;
+  }
+  &-main {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+  }
+  &-footer {
+    padding: 0;
+  }
 }

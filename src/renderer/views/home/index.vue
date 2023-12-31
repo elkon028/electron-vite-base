@@ -6,7 +6,6 @@ const { MAIN_VITE_SOME_KEY, PRELOAD_VITE_SOME_KEY, RENDERER_VITE_SOME_KEY } = im
 </script>
 
 <template>
-  <ElectronVersions />
   <div class="p-12px">
     <div class="my-10px">
       .env.* 环境变量配置信息读取
