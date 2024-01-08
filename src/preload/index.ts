@@ -7,6 +7,7 @@ import { electronAPI } from '@electron-toolkit/preload'
 const ipc = {
   switchDark: () => ipcRenderer.invoke('switchDark'),
   switchFullscreen: (args: boolean) => ipcRenderer.invoke('switchFullscreen', args),
+  openWindow: (args: string) => ipcRenderer.invoke('openWindow', args),
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to
@@ -16,12 +17,10 @@ if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('electron', electronAPI)
     contextBridge.exposeInMainWorld('ipc', ipc)
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error)
   }
-}
-else {
+} else {
   // @ts-expect-error (define in dts)
   window.electron = electronAPI
   // @ts-expect-error (define in dts)

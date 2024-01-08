@@ -3,6 +3,10 @@ import MarkdownDemo from './MarkdownDemo.md'
 
 // 环境变量
 const { MAIN_VITE_SOME_KEY, PRELOAD_VITE_SOME_KEY, RENDERER_VITE_SOME_KEY } = import.meta.env
+
+function open(url) {
+  window.ipc.openWindow(JSON.stringify({ url }))
+}
 </script>
 
 <template>
@@ -44,6 +48,12 @@ const { MAIN_VITE_SOME_KEY, PRELOAD_VITE_SOME_KEY, RENDERER_VITE_SOME_KEY } = im
         </el-link>
       </div>
     </div>
+    <div class="my-10px">
+      打开窗口
+    </div>
+    <el-link type="primary" @click="open('test')">
+      打开test窗口
+    </el-link>
     <div class="my-10px">
       Markdown 演示
     </div>
