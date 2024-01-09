@@ -36,7 +36,7 @@ function toggleDark(event) {
       },
     )
     // ipcRenderer
-    proxy.$ipc.switchDark()
+    proxy.$ipc('switchDark')
   })
 }
 </script>

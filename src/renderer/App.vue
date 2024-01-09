@@ -9,8 +9,8 @@ export default defineComponent({
   },
   setup() {
     return {
-      zIndex: 3000,
-      size: 'default',
+      size: 'small',
+      zIndex: 2000,
       locale: zhCn,
     }
   },

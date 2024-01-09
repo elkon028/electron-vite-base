@@ -7,11 +7,15 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BrowserTabs: typeof import('./components/BrowserTabs/BrowserTabs.vue')['default']
+    BrowserTags: typeof import('./components/BrowserTabs/BrowserTags.vue')['default']
     DarkToggle: typeof import('./components/DarkToggle.vue')['default']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElectronVersions: typeof import('./components/ElectronVersions.vue')['default']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElLink: typeof import('element-plus/es')['ElLink']
+    ElTabPane: typeof import('element-plus/es')['ElTabPane']
+    ElTabs: typeof import('element-plus/es')['ElTabs']
     ICarbonHome: typeof import('~icons/carbon/home')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

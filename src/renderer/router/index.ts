@@ -23,14 +23,6 @@ export const constantRoutes = [
           title: '首页',
         },
       },
-      {
-        path: '/test',
-        component: () => import('@/views/test/index.vue'),
-        name: 'test',
-        meta: {
-          title: '测试',
-        },
-      },
     ],
   },
 ]

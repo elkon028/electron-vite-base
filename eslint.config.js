@@ -12,7 +12,7 @@ module.exports = antfu(
       // 必须使用大括号
       'curly': ['error', 'all'],
       // else、catch、finally ... 大括号显示在同一行
-      'brace-style': ['error', '1tbs', { allowSingleLine: false }],
+      // 'brace-style': ['error', '1tbs', { allowSingleLine: false }],
     },
   },
 )

@@ -10,7 +10,8 @@ export default class MainApp {
   constructor(mainWindow) {
     if (is.dev && process.env.ELECTRON_RENDERER_URL) {
       this.baseURL = process.env.ELECTRON_RENDERER_URL
-    } else {
+    }
+    else {
       this.baseURL = join(__dirname, '../renderer/index.html')
     }
 
@@ -27,7 +28,8 @@ export default class MainApp {
     ipcMain.handle('switchDark', () => {
       if (nativeTheme.shouldUseDarkColors) {
         nativeTheme.themeSource = 'light'
-      } else {
+      }
+      else {
         nativeTheme.themeSource = 'dark'
       }
 
@@ -49,7 +51,8 @@ export default class MainApp {
 
       if (is.dev && process.env.ELECTRON_RENDERER_URL) {
         win.loadURL(`${process.env.ELECTRON_RENDERER_URL}#${args.url}`)
-      } else {
+      }
+      else {
         win.loadFile(join(__dirname, `../renderer/index.html#${args.url}`))
       }
     })
