@@ -32,7 +32,8 @@
     "mitt": "^3.0.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.4.6",

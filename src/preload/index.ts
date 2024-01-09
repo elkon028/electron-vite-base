@@ -8,6 +8,7 @@ const ipc = {
   switchDark: () => ipcRenderer.invoke('switchDark'),
   switchFullscreen: (args: boolean) => ipcRenderer.invoke('switchFullscreen', args),
   openWindow: (args: string) => ipcRenderer.invoke('openWindow', args),
+  getCursorScreenPoint: () => ipcRenderer.invoke('getCursorScreenPoint'),
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to

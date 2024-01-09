@@ -23,3 +23,10 @@ export function toJsonString(o: any) {
 
   return o
 }
+
+// 移动数组元素到指定位置
+export function moveArrayIndex(arr: Array<any>, fromIndex: number, toIndex: number) {
+  const item = arr.splice(fromIndex, 1)[0] // 删除源位置的元素并保存
+  arr.splice(toIndex, 0, item) // 在目标位置插入元素
+  return arr // 返回修改后的数组
+}

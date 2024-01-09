@@ -1,10 +1,14 @@
 <script setup>
-const items = [
+import { moveArrayIndex } from '@/utils'
+
+const { proxy } = getCurrentInstance()
+
+const items = ref([
   'item1',
   'item2',
   'item3',
   'item4',
-]
+])
 
 const body = ref('item1')
 
@@ -12,32 +16,68 @@ function onClick(name) {
   body.value = name
 }
 
-function onMousedown(event) {
-  console.log(event)
+// 开始拖拽一个可拖拽元素时，在 可拖拽元素 身上触发
+function onDragStart(event, index) {
+  console.log('onDragStart', event)
+  event.dataTransfer.setData('dragIndex', index)
 }
 
-function onMousemove(event) {
-  console.log(event)
+// 可拖拽元素进入可放置元素时，在 可放置元素 身上触发
+function onDragEnter(event) {
+  console.log('onDragEnter', event)
 }
 
-function onMouseup(event) {
-  console.log(event)
+// 可拖拽元素离开可放置元素时，在 可放置元素 身上触发
+function onDragLeave(event) {
+  console.log('onDragLeave', event)
+}
+
+// 当一个可拖拽元素被拖进一个可放置元素上时，在 可放置元素 上间隔几百毫秒触发一次
+function onDragOver(event) {
+  event.preventDefault()
+  console.log('onDragOver')
+}
+
+// 结束拖拽一个可拖拽元素时，在 可拖拽元素 身上触发
+async function onDragEnd(event) {
+  console.log('onDragEnd', event)
+  const point = await proxy.$ipc('getCursorScreenPoint')
+  if (point.x >= window.screenX && point.x <= window.screenX + window.outerWidth
+    && point.y >= window.screenY && point.y <= window.screenY + window.outerHeight
+  ) {
+  	// 未超出窗体，执行UI操作
+  }
+  else {
+    // 超出了窗体，新建窗体
+    proxy.$ipc('openWindow', { url: 'demo' })
+  }
+}
+
+// 放置一个元素时，在 可放置元素 上触发
+function onDrop(event, index) {
+  event.preventDefault()
+  const dragIndex = event.dataTransfer.getData('dragIndex')
+  items.value = moveArrayIndex(items.value, dragIndex, index)
 }
 </script>
 
 <template>
   <div class="browser-tabs">
-    <div class="header">
+    <transition-group name="drag" tag="div" class="header">
       <div
         v-for="(name, idx) in items" :key="idx" class="item"
+        :draggable="true"
         @click="onClick(name)"
-        @mousedown="onMousedown"
-        @mousemove="onMousemove"
-        @mouseup="onMouseup"
+        @dragstart="onDragStart($event, idx)"
+        @dragenter="onDragEnter"
+        @dragleave="onDragLeave"
+        @dragover="onDragOver"
+        @dragend="onDragEnd"
+        @drop="onDrop($event, idx)"
       >
         {{ name }}
       </div>
-    </div>
+    </transition-group>
     <div class="body">
       {{ body }}
     </div>
@@ -56,6 +96,7 @@ function onMouseup(event) {
     .item {
       padding: 5px 8px;
       border: 1px solid #ddd;
+      background: #f5c5c5;
       cursor: pointer;
     }
   }

@@ -1,6 +1,6 @@
 import { join } from 'node:path'
 import process from 'node:process'
-import { BrowserWindow, ipcMain, nativeTheme } from 'electron'
+import { BrowserWindow, ipcMain, nativeTheme, screen } from 'electron'
 import { is } from '@electron-toolkit/utils'
 import { successJson } from './utils'
 
@@ -55,6 +55,11 @@ export default class MainApp {
       else {
         win.loadFile(join(__dirname, `../renderer/index.html#${args.url}`))
       }
+    })
+
+    ipcMain.handle('getCursorScreenPoint', async () => {
+      const point = screen.getCursorScreenPoint()
+      return successJson({ point })
     })
 
     return this
