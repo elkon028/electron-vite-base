@@ -1,6 +1,8 @@
 const process = require('node:process')
 const antfu = require('@antfu/eslint-config').default
 
+// 查看应用的 eslint 规则
+// npx eslint-flat-config-viewer
 module.exports = antfu(
   {
     vue: true,
