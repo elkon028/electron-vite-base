@@ -36,7 +36,7 @@
     "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.4.6",
+    "@antfu/eslint-config": "^2.6.2",
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@iconify-json/carbon": "^1.1.27",
     "@iconify/tools": "^4.0.0",

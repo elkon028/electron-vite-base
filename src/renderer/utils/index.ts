@@ -19,7 +19,9 @@ export function isObjectAndArray(o: any) {
 }
 
 export function toJsonString(o: any) {
-  if (isObjectAndArray(o)) { return JSON.stringify(o) }
+  if (isObjectAndArray(o)) {
+    return JSON.stringify(o)
+  }
 
   return o
 }

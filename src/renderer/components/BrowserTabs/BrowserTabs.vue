@@ -3,13 +3,7 @@ import { moveArrayIndex } from '@/utils'
 
 const { proxy } = getCurrentInstance()
 
-const items = ref([
-  'item1',
-  'item2',
-  'item3',
-  'item4',
-])
-
+const items = ref(['item1', 'item2', 'item3', 'item4'])
 const body = ref('item1')
 
 function onClick(name) {
@@ -41,15 +35,20 @@ function onDragOver(event) {
 // 结束拖拽一个可拖拽元素时，在 可拖拽元素 身上触发
 async function onDragEnd(event) {
   console.log('onDragEnd', event)
+  // 通过主进程，获取鼠标在屏幕上的坐标
   const point = await proxy.$ipc('getCursorScreenPoint')
-  if (point.x >= window.screenX && point.x <= window.screenX + window.outerWidth
-    && point.y >= window.screenY && point.y <= window.screenY + window.outerHeight
+  // 判断拖拽是否超出屏幕
+  if (
+    point.x >= window.screenX &&
+    point.x <= window.screenX + window.outerWidth &&
+    point.y >= window.screenY &&
+    point.y <= window.screenY + window.outerHeight
   ) {
-  	// 未超出窗体，执行UI操作
-  }
-  else {
-    // 超出了窗体，新建窗体
-    proxy.$ipc('openWindow', { url: 'demo' })
+    // 未超出窗体，执行UI操作
+    // 例如上下左右分屏效果
+  } else {
+    // 此处为拖拽超出了窗体，就新建窗体
+    // proxy.$ipc('openWindow', { url: 'demo?tab=1' })
   }
 }
 
@@ -65,7 +64,9 @@ function onDrop(event, index) {
   <div class="browser-tabs">
     <transition-group name="drag" tag="div" class="header">
       <div
-        v-for="(name, idx) in items" :key="idx" class="item"
+        v-for="(name, idx) in items"
+        :key="idx"
+        class="item"
         :draggable="true"
         @click="onClick(name)"
         @dragstart="onDragStart($event, idx)"
@@ -73,8 +74,7 @@ function onDrop(event, index) {
         @dragleave="onDragLeave"
         @dragover="onDragOver"
         @dragend="onDragEnd"
-        @drop="onDrop($event, idx)"
-      >
+        @drop="onDrop($event, idx)">
         {{ name }}
       </div>
     </transition-group>
@@ -92,11 +92,11 @@ function onDrop(event, index) {
   flex-direction: column;
   .header {
     display: flex;
-
+    background: #999;
     .item {
       padding: 5px 8px;
       border: 1px solid #ddd;
-      background: #f5c5c5;
+      background: #f5f5f5;
       cursor: pointer;
     }
   }
