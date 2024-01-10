@@ -39,10 +39,10 @@ async function onDragEnd(event) {
   const point = await proxy.$ipc('getCursorScreenPoint')
   // 判断拖拽是否超出屏幕
   if (
-    point.x >= window.screenX &&
-    point.x <= window.screenX + window.outerWidth &&
-    point.y >= window.screenY &&
-    point.y <= window.screenY + window.outerHeight
+    point.x >= window.screenX
+    && point.x <= window.screenX + window.outerWidth
+    && point.y >= window.screenY
+    && point.y <= window.screenY + window.outerHeight
   ) {
     // 未超出窗体，执行UI操作
     // 例如上下左右分屏效果
@@ -74,13 +74,12 @@ function onDrop(event, index) {
         @dragleave="onDragLeave"
         @dragover="onDragOver"
         @dragend="onDragEnd"
-        @drop="onDrop($event, idx)">
+        @drop="onDrop($event, idx)"
+      >
         {{ name }}
       </div>
     </transition-group>
-    <div class="body">
-      {{ body }}
-    </div>
+    <div class="body">{{ body }}</div>
   </div>
 </template>
 

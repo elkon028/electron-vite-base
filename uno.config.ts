@@ -12,22 +12,17 @@ import {
 
 import { compareColors, stringToColor } from '@iconify/utils/lib/colors'
 import type { IconSet } from '@iconify/tools'
-import {
-  deOptimisePaths,
-  importDirectory,
-  parseColors,
-  runSVGO,
-} from '@iconify/tools'
+import { deOptimisePaths, importDirectory, parseColors, runSVGO } from '@iconify/tools'
 import type { CustomIconLoader } from '@iconify/utils/lib/loader/types'
 
 function loadCustomIconSet(): CustomIconLoader {
   const promise = new Promise<IconSet>((resolve, reject) => {
     importDirectory('src/renderer/assets/icons', {
       prefix: 'svg',
-    }).then((iconSet) => {
-      // 分析所有图标：优化、清理
-      iconSet
-        .forEachSync((name) => {
+    })
+      .then((iconSet) => {
+        // 分析所有图标：优化、清理
+        iconSet.forEachSync((name) => {
           const svg = iconSet.toSVG(name)!
 
           // Change color to `currentColor`
@@ -39,8 +34,9 @@ function loadCustomIconSet(): CustomIconLoader {
               // console.log('Color:', colorStr, color);
 
               // Change black to 'currentColor'
-              if (color && compareColors(color, blackColor))
+              if (color && compareColors(color, blackColor)) {
                 return 'currentColor'
+              }
 
               switch (color?.type) {
                 case 'none':
@@ -48,9 +44,7 @@ function loadCustomIconSet(): CustomIconLoader {
                   return color
               }
 
-              throw new Error(
-								`Unexpected color "${colorStr}" in attribute ${attr}`,
-              )
+              throw new Error(`Unexpected color "${colorStr}" in attribute ${attr}`)
             },
           })
 
@@ -64,11 +58,12 @@ function loadCustomIconSet(): CustomIconLoader {
           iconSet.fromSVG(name, svg)
         })
 
-      // Resolve with icon set
-      resolve(iconSet)
-    }).catch((err) => {
-      reject(err)
-    })
+        // Resolve with icon set
+        resolve(iconSet)
+      })
+      .catch((err) => {
+        reject(err)
+      })
   })
 
   return async (name) => {

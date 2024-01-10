@@ -1,5 +1,5 @@
-@use "./mixins.scss";
-@use "./markdown.scss";
+@use './mixins.scss';
+@use './markdown.scss';
 
 html,
 body {
@@ -8,7 +8,7 @@ body {
   overflow: hidden;
   font-size: 14px;
   font-family:
-    "Optimistic Display",
+    'Optimistic Display',
     system-ui,
     -apple-system,
     sans-serif;
