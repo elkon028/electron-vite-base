@@ -36,7 +36,7 @@ function onDragOver(event) {
 async function onDragEnd(event) {
   console.log('onDragEnd', event)
   // 通过主进程，获取鼠标在屏幕上的坐标
-  const point = await proxy.$ipc('getCursorScreenPoint')
+  const { point } = await proxy.$ipc('getCursorScreenPoint')
   // 判断拖拽是否超出屏幕
   if (
     point.x >= window.screenX
@@ -48,7 +48,7 @@ async function onDragEnd(event) {
     // 例如上下左右分屏效果
   } else {
     // 此处为拖拽超出了窗体，就新建窗体
-    // proxy.$ipc('openWindow', { url: 'demo?tab=1' })
+    proxy.$ipc('openWindow', { url: 'demo?tab=1' })
   }
 }
 

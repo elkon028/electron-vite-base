@@ -10,12 +10,11 @@ module.exports = antfu(
       'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
       'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
       'no-async-promise-executor': 'off',
-      'style/operator-linebreak': ['error', 'before'],
-      // else、catch、finally ... 大括号显示在同一行
-      'style/brace-style': ['error', '1tbs', { allowSingleLine: false }],
+      'antfu/if-newline': 'off',
       // 必须使用大括号
       'curly': ['error', 'all'],
-      'antfu/if-newline': 'off',
+      // else、catch、finally ... 大括号显示在同一行
+      'style/brace-style': ['error', '1tbs', { allowSingleLine: false }],
     },
   },
   {

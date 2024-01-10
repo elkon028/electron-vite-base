@@ -18,7 +18,7 @@ export default class MainApp {
   }
 
   start() {
-    ipcMain.handle('switchFullscreen', async () => {
+    ipcMain.handle('switchFullscreen', () => {
       const isFullScreen = this.mainWindow.isFullScreen()
       this.mainWindow.setFullScreen(!isFullScreen)
       return successJson({ data: !isFullScreen })
@@ -52,9 +52,11 @@ export default class MainApp {
       } else {
         win.loadFile(join(__dirname, `../renderer/index.html#${args.url}`))
       }
+
+      return successJson()
     })
 
-    ipcMain.handle('getCursorScreenPoint', async () => {
+    ipcMain.handle('getCursorScreenPoint', () => {
       const point = screen.getCursorScreenPoint()
       return successJson({ point })
     })
