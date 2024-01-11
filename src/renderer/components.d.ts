@@ -15,7 +15,12 @@ declare module 'vue' {
     ElLink: typeof import('element-plus/es')['ElLink']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
+    FlowChart: typeof import('./components/FlowChart/index.vue')['default']
+    FlowGraph: typeof import('./components/FlowChart/components/FlowGraph.vue')['default']
+    GanttChart: typeof import('./components/GanttChart/index.vue')['default']
     ICarbonHome: typeof import('~icons/carbon/home')['default']
+    NodeInput: typeof import('./components/FlowChart/components/NodeInput.vue')['default']
+    NodeItem: typeof import('./components/FlowChart/components/NodeItem.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

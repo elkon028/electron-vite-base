@@ -1,4 +1,8 @@
 <script setup>
+defineOptions({
+  name: 'DarkToggle',
+})
+
 const isDark = useDark()
 const { proxy } = getCurrentInstance()
 

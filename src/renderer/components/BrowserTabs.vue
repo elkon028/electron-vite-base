@@ -1,6 +1,10 @@
 <script setup>
 import { moveArrayIndex } from '@/utils'
 
+defineOptions({
+  name: 'BrowserTabs',
+})
+
 const { proxy } = getCurrentInstance()
 
 const items = ref(['item1', 'item2', 'item3', 'item4'])
